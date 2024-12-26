@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Word List</h1>
+    <table>
+        <tr>
+            <th>Word</th>
+            <th>Translation</th>
+            <th>Example Sentence</th>
+            <th>Actions</th>
+        </tr>
+        {% for word in words.items %}
+        <tr>
+            <td>{{ word.word }}</td>
+            <td>{{ word.translation }}</td>
+            <td>{{ word.example_sentence }}</td>
+            <td><a href="{{ url_for('edit_word', word_id=word.id, page=words.page) }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div>
+        {% if words.has_prev %}
+            <a href="{{ url_for('index', page=words.prev_num) }}">Previous</a>
+        {% endif %}
+        {% if words.has_next %}
+            <a href="{{ url_for('index', page=words.next_num) }}">Next</a>
+        {% endif %}
+    </div>
+</body>
+</html>

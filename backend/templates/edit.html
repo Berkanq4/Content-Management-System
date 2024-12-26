@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Word</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Edit Word</h1>
+    <form method="POST" action="{{ url_for('edit_word', word_id=word.id, page=request.args.get('page', 1)) }}">
+        <label for="word">Word:</label>
+        <input type="text" id="word" name="word" value="{{ word.word }}" required>
+        <br>
+        <label for="translation">Translation:</label>
+        <input type="text" id="translation" name="translation" value="{{ word.translation }}" required>
+        <br>
+        <label for="example_sentence">Example Sentence:</label>
+        <input type="text" id="example_sentence" name="example_sentence" value="{{word.example_sentence}}" required>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
