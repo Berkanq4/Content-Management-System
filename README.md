@@ -15,11 +15,12 @@ git clone https://github.com/Berkanq4/Content-Management-System.git
 cd Content-Management-System
 
 
-
 2) Create and Activate a Virtual Environment:
 
 python3 -m venv venv
+
 source venv/bin/activate # On macOS/Linux
+
 venv\Scripts\activate # On Windows
 
 
