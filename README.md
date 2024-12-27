@@ -35,9 +35,10 @@ pip install -r requirements.txt
 5) Run the application
    
    cd backend
+   
    python3 app.py
 
 
-6) Access the Application: Open your web browser and navigate to http://127.0.0.1:5000 to view and interact with the application.
+7) Access the Application: Open your web browser and navigate to http://127.0.0.1:5000 to view and interact with the application.
 
    
