@@ -12,6 +12,7 @@ Follow these steps to set up and run the CMS application locally on your machine
 1)Clone the Repository
 
 git clone https://github.com/Berkanq4/Content-Management-System.git
+
 cd Content-Management-System
 
 
