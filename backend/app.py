@@ -11,8 +11,9 @@ data_dir = os.path.join(basedir, 'data')  # Join the base directory to create th
 os.makedirs(data_dir, exist_ok=True)  # Ensure data directory exists, create it if it doesn't
 db_path = os.path.join(data_dir, 'words_phrases.db')  # Join the data directory with the database file name
 
+
 # Configure the Flask app with database settings
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/berkanberk/Desktop/cms_project/data/words_phrases.db'  # Database URI for SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'  # Use the dynamic path for the SQLite database
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # Disable modification tracking
 app.config['SQLALCHEMY_ECHO'] = True  # Enable SQLAlchemy logging to echo SQL statements
 
